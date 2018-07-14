@@ -30,7 +30,7 @@ public class PropertyDAO {
 
     public void add(Property bean) {
         String sql = "insert into Property values(null, ?, ?)";
-        try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
+        try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);) {
             ps.setInt(1, bean.getCategory().getId());
             ps.setString(2, bean.getName());
             ps.execute();

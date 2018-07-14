@@ -50,7 +50,7 @@ public class OrderDAO {
     public void add(Order bean) {
 
         String sql = "insert into order_ values(null,?,?,?,?,?,?,?,?,?,?,?,?)";
-        try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
+        try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);) {
 
             ps.setString(1, bean.getOrderCode());
             ps.setString(2, bean.getAddress());

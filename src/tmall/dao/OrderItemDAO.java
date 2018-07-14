@@ -35,7 +35,7 @@ public class OrderItemDAO {
     public void add(OrderItem bean) {
 
         String sql = "insert into OrderItem values(null,?,?,?,?)";
-        try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
+        try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);) {
 
             ps.setInt(1, bean.getProduct().getId());
 
@@ -62,8 +62,8 @@ public class OrderItemDAO {
 
     public void update(OrderItem bean) {
 
-        String sql = "update OrderItem set pid= ?, oid=?, uid=?,number=?  where id = ?";
-        try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
+        String sql = "update OrderItem set pid=?, oid=?, uid=?,number=?  where id = ?";
+        try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);) {
 
             ps.setInt(1, bean.getProduct().getId());
             if (null == bean.getOrder())

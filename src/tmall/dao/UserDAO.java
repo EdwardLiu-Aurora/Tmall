@@ -31,7 +31,7 @@ public class UserDAO {
     // 添加用户
     public void add(User bean) {
         String sql = "insert into user values(null, ?, ?)";
-        try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
+        try (Connection c = DBUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);) {
             ps.setString(1, bean.getName());
             ps.setString(2, bean.getPassword());
 
