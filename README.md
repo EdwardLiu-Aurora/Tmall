@@ -1,6 +1,8 @@
 
 #### 该项目为学习 how2j.cn 中 J2EE 天猫后台的代码和功能说明
 
+![home](http://how2j.cn/frontstepImage?stepid=3524)
+
 ##### 项目介绍
 
 1. 此项目为 how2j.cn 上的 J2EE 天猫后台模仿项目
