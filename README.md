@@ -1,7 +1,7 @@
 
 #### 该项目为学习 how2j.cn 中 J2EE 天猫后台的代码和功能说明
 
-![home](http://how2j.cn/frontstepImage?stepid=3524)
+![home](https://github.com/EdwardLiu-Aurora/tmall/blob/master/web/img/home.png?raw=true)
 
 ##### 项目介绍
 
